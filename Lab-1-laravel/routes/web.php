@@ -12,11 +12,22 @@ use App\Http\Controllers\LearningController;
 
 
 Route::get('/', [MainController::class, "indexAction"])->name('main');
+
 Route::get('/main', [MainController::class, "indexAction"])->name('main');
+
 Route::get('/about', [AboutController::class, "indexAction"])->name('about');
+
 Route::get('/contacts', [ContactsController::class, "indexAction"])->name('contacts');
+
 Route::get('/gallery', [GalleryController::class, "indexAction"])->name('gallery');
+
 Route::get('/history', [HistoryController::class, "indexAction"])->name('history');
+
 Route::get('/interests', [InterestsController::class, "indexAction"])->name('interests');
-Route::get('/test', [TestController::class, "indexAction"])->name('test');
+
+Route::post('/test', [TestController::class, "indexAction"]);
+Route::get('/test', function () {
+    return view('test');
+})->name('test');
+
 Route::get('/learning', [LearningController::class, "indexAction"])->name('learning');
