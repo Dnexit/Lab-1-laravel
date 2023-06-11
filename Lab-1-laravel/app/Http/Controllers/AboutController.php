@@ -10,7 +10,6 @@ class AboutController extends Controller
         $vars = [
 
         ];
-
         return view('about');
     }
 }
